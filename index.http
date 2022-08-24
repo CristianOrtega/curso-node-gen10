@@ -1,0 +1,74 @@
+#############################
+####### USER REQUEST ########
+#############################
+
+### Get all user
+GET http://localhost:1992/user
+
+### Get one user
+GET http://localhost:1992/user/_5CDY7RwzdIK0iZG803S2
+
+### Save a new user
+POST http://localhost:1992/user
+Content-Type: application/json
+
+{
+  "name": "Caleb",
+  "lastName": "Test",
+  "email": "caleb.parra@gmail.com"
+}
+
+### Delete a user by id
+DELETE http://localhost:1992/user/WOqvbXh27H4cNDKdiYnis
+
+### Update a user by id
+PATCH http://localhost:1992/user/csg-FFPXgvrcy3GKbvntC
+Content-Type: application/json
+
+{
+  "email": "c.parra@gmail.com"
+}
+
+### Save a url
+POST http://localhost:1992/url
+Content-Type: application/json
+
+{
+  "link": "https://www.linkedin.com/feed/update/urn:li:share:6965311557555646464?utm_source=linkedin_share&utm_medium=member_desktop_share&utm_content=post"
+}
+
+### Get url
+GET http://localhost:1992/url/ns1gn_
+
+
+
+#############################
+###### ARTICLE REQUEST ######
+#############################
+
+### Get all articles
+GET http://localhost:1992/article
+
+### Get one article
+GET http://localhost:1992/article/Nhfi4mbxldUftl_u1gNb_
+
+### Save a new article
+POST http://localhost:1992/article
+Content-Type: application/json
+
+{
+  "name": "Mascaras Kimetsu No Yaiba",
+  "description": "Mascaras de Tanjiro, Sabito y Makomo con luces LED para que te tomes fotos espectaculares, ideales para Cosplay. Las luces funcionan con baterías doble A que NO vienen incluidas.",
+  "price": 19990
+}
+
+### Delete a article by id
+DELETE http://localhost:1992/article/lY0SGfbFhV2SZ9BZp1ZyI
+
+### Update a article by id
+PATCH http://localhost:1992/article/Nhfi4mbxldUftl_u1gNb_
+Content-Type: application/json
+
+{
+  "price": 14990
+}

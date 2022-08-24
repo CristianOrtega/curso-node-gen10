@@ -1,0 +1,23 @@
+{
+  "name": "curso_escalab_nodejs",
+  "version": "0.1.0",
+  "description": "Curso de node.js de escalab",
+  "main": "src/index.js",
+  "scripts": {
+    "service": "node -r dotenv/config src/index.js",
+    "express": "nodemon -r dotenv/config src/expressExample/index.js",
+    "http": "nodemon -r dotenv/config src/httpExample/index.js"
+  },
+  "author": "CrisOrtegam",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "~2.0.19",
+    "dotenv": "~16.0.1"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.0.0"
+  }
+}
