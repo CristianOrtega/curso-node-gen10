@@ -3,34 +3,36 @@
 #############################
 
 ### Get all user
-GET http://localhost:1992/user
+GET http://localhost:1992/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1aXMuYXJkaWxhQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoic2Fsa2Zqc2RsYWtqZmxkYXM7amZkbHNhZml1aGV3aXJmaCIsImlhdCI6MTY2MTkwOTI1MCwiZXhwIjoxNjYxOTA5MzcwfQ.yHeS9SzEEgSe_xxXnRs4GwO5Q5cbeZxVGQveOt9yLKg
 
 ### Get one user
-GET http://localhost:1992/user/_5CDY7RwzdIK0iZG803S2
+GET http://localhost:1992/api/user/56IMXtKwbHqbi8KCUB9cv
 
 ### Save a new user
-POST http://localhost:1992/user
+POST http://localhost:1992/api/user/singup
 Content-Type: application/json
 
 {
-  "name": "Caleb",
-  "lastName": "Test",
-  "email": "caleb.parra@gmail.com"
+  "name": "Luis",
+  "lastName": "Ardila",
+  "email": "luis.ardila@gmail.com",
+  "password": "salkfjsdlakjfldas;jfdlsafiuhewirfh"
 }
 
 ### Delete a user by id
-DELETE http://localhost:1992/user/WOqvbXh27H4cNDKdiYnis
+DELETE http://localhost:1992/api/user/y_omIXwPabKD8nwrmD0X_
 
 ### Update a user by id
-PATCH http://localhost:1992/user/csg-FFPXgvrcy3GKbvntC
+PATCH http://localhost:1992/api/user/y_omIXwPabKD8nwrmD0X_
 Content-Type: application/json
 
 {
-  "email": "c.parra@gmail.com"
+  "email": "caleb.parra@gmail.com"
 }
 
 ### Save a url
-POST http://localhost:1992/url
+POST http://localhost:1992/api/url/
 Content-Type: application/json
 
 {
@@ -38,7 +40,33 @@ Content-Type: application/json
 }
 
 ### Get url
-GET http://localhost:1992/url/ns1gn_
+GET http://localhost:1992/api/url/ns1gn_
+
+### 404 error
+GET http://localhost:1992/route/that/does/not/exists
+
+### Login
+POST http://localhost:1992/api/user/login
+Content-Type: application/json
+
+{
+  "email": "luis.ardila@gmail.com",
+  "password": "salkfjsdlakjfldas;jfdlsafiuhewirfh"
+}
+
+### Create role
+POST http://localhost:1992/api/role
+Content-Type: application/json
+
+{
+  "id": "2",
+  "name": "user"
+}
+
+### Get a role
+GET http://localhost:1992/api/role/1
+Content-Type: application/json
+
 
 
 
@@ -47,13 +75,13 @@ GET http://localhost:1992/url/ns1gn_
 #############################
 
 ### Get all articles
-GET http://localhost:1992/article
+GET http://localhost:1992/api/article
 
 ### Get one article
-GET http://localhost:1992/article/Nhfi4mbxldUftl_u1gNb_
+GET http://localhost:1992/api/article/Nhfi4mbxldUftl_u1gNb_
 
 ### Save a new article
-POST http://localhost:1992/article
+POST http://localhost:1992/api/article
 Content-Type: application/json
 
 {
@@ -63,10 +91,10 @@ Content-Type: application/json
 }
 
 ### Delete a article by id
-DELETE http://localhost:1992/article/lY0SGfbFhV2SZ9BZp1ZyI
+DELETE http://localhost:1992/api/article/lY0SGfbFhV2SZ9BZp1ZyI
 
 ### Update a article by id
-PATCH http://localhost:1992/article/Nhfi4mbxldUftl_u1gNb_
+PATCH http://localhost:1992/api/article/Nhfi4mbxldUftl_u1gNb_
 Content-Type: application/json
 
 {

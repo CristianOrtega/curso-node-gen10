@@ -1,13 +1,10 @@
 const { Router } = require('express')
 const { UrlService } = require('../../services')
 
-const response = require('./response');
-const UrlRouter = Router();
+const response = require('./response')
+const UrlRouter = Router()
 
-const SERVICE_NAME = '/url';
-
-UrlRouter.route(`${SERVICE_NAME}/:userId`) 
-  .post(async (req, res) => {
+UrlRouter.route('/url/:userId').post(async (req, res, next) => {
     const {
       body: { link },
       params: { userId }
@@ -24,14 +21,14 @@ UrlRouter.route(`${SERVICE_NAME}/:userId`)
         status: 201
       })
     } catch (error) {
-      console.error(error)
-      response({ message: 'Internal server error', res })
+    next(error)
     }
   })
 
-UrlRouter.route(`${SERVICE_NAME}/:id`) 
-  .get(async (req, res) => {
-    const { params: { id } } = req
+UrlRouter.route('/url/:id').get(async (req, res, next) => {
+  const {
+    params: { id }
+  } = req
 
     try {
       const urlService = new UrlService({ id })
@@ -39,8 +36,7 @@ UrlRouter.route(`${SERVICE_NAME}/:id`)
 
       res.redirect(url.link)
     } catch (error) {
-      console.error(error)
-      response({ message: 'Internal server error', res })
+    next(error)
     }
   })
 
